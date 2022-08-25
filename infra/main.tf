@@ -1,15 +1,6 @@
 # https://github.com/terraform-aws-modules/terraform-aws-iam/tree/master/modules/iam-assumable-role-with-oidc
 # https://github.com/terraform-aws-modules/terraform-aws-ecr
 
-terraform {
-  required_version = ">= 1.2"
-  required_providers {
-    aws = {
-      source = "hashicorp/aws"
-    }
-  }
-}
-
 provider "aws" {
   region     = "ap-northeast-1"
   access_key = var.access_key
@@ -53,7 +44,7 @@ module "iam_assumable_role_with_oidc" {
 
 module "private_ecr" {
   source  = "terraform-aws-modules/ecr/aws"
-  version = "1.4.0"
+  version = "1.3.2"
 
   repository_name = var.repository_name
   repository_type = "private"
