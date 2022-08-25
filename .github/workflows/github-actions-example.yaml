@@ -1,6 +1,8 @@
 # https://github.com/aws-actions/configure-aws-credentials
 # https://github.com/aws-actions/amazon-ecr-login
 
+on: push
+
 jobs:
   deploy:
     name: Upload to Amazon ECR
