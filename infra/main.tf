@@ -7,6 +7,20 @@ provider "aws" {
   secret_key = var.secret_key
 }
 
+variable "repository_name" {
+  type = string
+}
+
+variable "access_key" {
+  type      = string
+  sensitive = true
+}
+
+variable "secret_key" {
+  type      = string
+  sensitive = true
+}
+
 data "http" "github_actions_openid_configuration" {
   url = "https://token.actions.githubusercontent.com/.well-known/openid-configuration"
 }
