@@ -1,24 +1,19 @@
 # https://github.com/terraform-aws-modules/terraform-aws-iam/tree/master/modules/iam-assumable-role-with-oidc
 # https://github.com/terraform-aws-modules/terraform-aws-ecr
 
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "4.27.0"
+    }
+  }
+}
+
 provider "aws" {
   region     = "ap-northeast-1"
   access_key = var.access_key
   secret_key = var.secret_key
-}
-
-variable "repository_name" {
-  type = string
-}
-
-variable "access_key" {
-  type      = string
-  sensitive = true
-}
-
-variable "secret_key" {
-  type      = string
-  sensitive = true
 }
 
 data "http" "github_actions_openid_configuration" {
