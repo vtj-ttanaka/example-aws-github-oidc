@@ -21,7 +21,7 @@ data "http" "github_actions_openid_configuration" {
 }
 
 data "tls_certificate" "github_actions" {
-  url = jsondecode(data.http.github_actions_openid_configuration.body).jwks_uri
+  url = jsondecode(data.http.github_actions_openid_configuration.response_body).jwks_uri
   # url = "https://token.actions.githubusercontent.com/.well-known/jwks"
 }
 
