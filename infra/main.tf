@@ -58,7 +58,7 @@ module "iam_assumable_role_with_oidc" {
 
 module "private_ecr" {
   source  = "terraform-aws-modules/ecr/aws"
-  version = "1.3.2"
+  version = "1.4.0"
 
   repository_name = var.repository_name
   repository_type = "private"
